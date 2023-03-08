@@ -37,7 +37,7 @@ app.use("/auth", authRouter);
 app.use("/post", postRouter);
 app.use("/user", userRouter);
 app.get("/", (req, res) => {
-  res.status(200).send("okay from server");
+  res.status(200).send(`<a href=${process.env.CLIENT_ORIGIN}> click here </a>`);
 });
 
 const PORT = process.env.PORT;
@@ -47,4 +47,3 @@ dbConnect();
 app.listen(PORT, () => {
   console.log("listening on port", PORT);
 });
-
